@@ -1,0 +1,86 @@
+
+<div class="container mt-2">
+  <div class="row">
+    <div class="col col-md-4 offset-md-4">
+      <a routerLink="/add" class="btn btn-dark">Add A New Employee</a>
+    </div>
+  </div>
+  <div class="list-group">
+    <a *ngFor="let employee of employee$ | async" class="list-group-item list-group-item-action">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ employee.empName }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">EmpId: {{ employee.empId }}</li>
+          <li class="list-group-item">Phone: {{ employee.empPhoneNumber }}</li>
+          <li class="list-group-item">Email: {{ employee.empEmail }}</li>
+        </ul>
+        <div class="card-body">
+          <!-- <a [routerLink]="['/edit', employee.id]" class="btn btn-dark">Edit</a> -->
+          <button class="btn btn-dark" (click)="openEditModal(employee.id)">Edit</button>
+          <button class="btn btn-dark" (click)="openDeleteModal(employee.id)">Delete</button>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are sure to delete this item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit Employee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Create a form inside the modal for editing -->
+        <!-- {{EmployeeForm.empName | json}} -->
+        <form>
+          <div class="mb-3">
+            <label for="empName" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="empName" name="empName" [(ngModel)]="EmployeeForm.empName"  >
+          </div>
+          <div class="mb-3">
+            <label for="empName" class="form-label">EmpID</label>
+            <input type="text" class="form-control" id="EmpId" name="EmpId" [(ngModel)]="EmployeeForm.empId"  >
+          </div>
+          <div class="mb-3">
+            <label for="empPhoneNumber" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="empPhoneNumber" name="empPhoneNumber" [(ngModel)]="EmployeeForm.empPhoneNumber" >
+          </div>
+          
+          <div class="mb-3">
+            <label for="empEmail" class="form-label">Email</label>
+            <input type="text" class="form-control" id="empEmail" name="empEmail" [(ngModel)]="EmployeeForm.empEmail" >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveChanges()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

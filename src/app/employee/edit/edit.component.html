@@ -1,0 +1,40 @@
+<div class="container">
+  <legend>Update A New Employee</legend>
+  <div class="mb-3">
+    <label for="txtEmployeeName" class="form-label">Employee Name</label>
+    <input
+      type="text"
+      [(ngModel)]="EmployeeForm.empName"
+      class="form-control"
+      id="txtEmployeeName"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="txtempId" class="form-label">EmpId</label>
+    <input
+      type="number"
+      [(ngModel)]="EmployeeForm.empId"
+      class="form-control"
+      id="txtempId"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="txtempPhoneNumber" class="form-label">empPhoneNumber</label>
+    <input
+      type="number"
+      [(ngModel)]="EmployeeForm.empPhoneNumber"
+      class="form-control"
+      id="txtempPhoneNumber"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="txtEmpEmail" class="form-label">empEmail</label>
+    <input
+      type="text"
+      [(ngModel)]="EmployeeForm.empEmail"
+      class="form-control"
+      id="txtEmpEmail"
+    />
+  </div>
+  <button type="button" class="btn btn-dark" (click)="udapte()">Update</button>
+</div>

@@ -1,0 +1,39 @@
+{
+  "employee": [
+    {
+      "id": 5,
+      "empId": 23122,
+      "empName": "Brajraj Ji ji",
+      "empPhoneNumber": 32323232,
+      "empEmail": "Brajraj@example.comwww"
+    },
+    {
+      "id": 6,
+      "empId": 1123232,
+      "empName": "Sourabh G",
+      "empPhoneNumber": 34343,
+      "empEmail": "Sourabh@gmail.com"
+    },
+    {
+      "id": 7,
+      "empId": 111939,
+      "empName": "Rahul Verma",
+      "empPhoneNumber": 3343434,
+      "empEmail": "Rahul@gmail.comm"
+    },
+    {
+      "id": 8,
+      "empId": 118765,
+      "empName": "Prashant Malakoti",
+      "empPhoneNumber": 9383473,
+      "empEmail": "parashant@gmail.com"
+    },
+    {
+      "id": 9,
+      "empId": 11333,
+      "empName": "shree",
+      "empPhoneNumber": 8348388,
+      "empEmail": "shree@gmail.com"
+    }
+  ]
+}

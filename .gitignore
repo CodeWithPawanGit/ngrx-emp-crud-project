@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+
+# Compiled output
+dist/
+*.js
+*.js.map
+*.css
+*.css.map
+
+# NgRx generated files
+src/app/state/*.effects.spec.ts
+src/app/state/*.reducer.spec.ts
+src/app/state/*.actions.spec.ts
+
+.angular/cache/
+
+# IDE files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
